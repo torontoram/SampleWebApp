@@ -1,2 +1,2 @@
 # SampleWebApp
-# all the Java projects from Eclypse local must be saved here
+# all the Unix main branch commit projects
