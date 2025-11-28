@@ -2,99 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essential Docker Commands</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            color: #0db7ed; /* Docker Blue */
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-        code {
-            background-color: #eee;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: Consolas, 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-    </style>
+    <title>My Simple Page</title>
 </head>
 <body>
 
-    <h1>🐳 Essential Docker Commands Reference</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Command</th>
-                <th>Description</th>
-                <th>Example Usage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>docker run</code></td>
-                <td>Run a command in a new container, often used to create and start a container from an image.</td>
-                <td><code>docker run -it ubuntu /bin/bash</code></td>
-            </tr>
-            <tr>
-                <td><code>docker ps</code></td>
-                <td>List running containers. Use <code>-a</code> to list all (running and stopped) containers.</td>
-                <td><code>docker ps -a</code></td>
-            </tr>
-            <tr>
-                <td><code>docker build</code></td>
-                <td>Build an image from a Dockerfile.</td>
-                <td><code>docker build -t my-app:latest .</code></td>
-            </tr>
-            <tr>
-                <td><code>docker pull</code></td>
-                <td>Pull an image or a repository from a registry (like Docker Hub).</td>
-                <td><code>docker pull nginx:latest</code></td>
-            </tr>
-            <tr>
-                <td><code>docker images</code></td>
-                <td>List local Docker images.</td>
-                <td><code>docker images</code></td>
-            </tr>
-            <tr>
-                <td><code>docker stop</code></td>
-                <td>Stop one or more running containers.</td>
-                <td><code>docker stop container_id</code></td>
-            </tr>
-            <tr>
-                <td><code>docker rm</code></td>
-                <td>Remove one or more containers.</td>
-                <td><code>docker rm container_id</code></td>
-            </tr>
-            <tr>
-                <td><code>docker rmi</code></td>
-                <td>Remove one or more images.</td>
-                <td><code>docker rmi image_id</code></td>
-            </tr>
-            <tr>
-                <td><code>docker exec</code></td>
-                <td>Execute a command in a running container.</td>
-                <td><code>docker exec -it web-server /bin/sh</code></td>
-            </tr>
-        </tbody>
-    </table>
+    <h1>Hello, World!</h1>
+    <p>This is the content of my very first HTML page.</p>
 
 </body>
 </html>
