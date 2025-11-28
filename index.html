@@ -9,7 +9,7 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333; }
         .container { width: 80%; max-width: 1200px; margin: auto; padding: 20px 0; }
 
-        /* Header & Navigation */
+        /* Header & Navigation (Existing CSS) */
         header { background-color: #1a4d7d; color: white; padding: 10px 0; }
         nav { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5em; font-weight: bold; }
@@ -17,10 +17,10 @@
         nav ul li a { color: white; text-decoration: none; padding: 10px 15px; display: block; transition: background-color 0.3s; }
         nav ul li a:hover { background-color: #0e3052; }
 
-        /* Hero Section (Value Proposition) */
+        /* Hero Section (Existing CSS) */
         .hero { 
             background: url('placeholder-office-bg.jpg') no-repeat center center/cover;
-            background-color: #1a4d7d; /* Fallback color */
+            background-color: #1a4d7d; 
             color: white; 
             padding: 100px 0; 
             text-align: center;
@@ -39,20 +39,78 @@
         }
         .cta-button:hover { background-color: #e68a00; }
 
-        /* Social Proof Section (Logos/Laurels) */
+        /* Social Proof Section (Existing CSS) */
         .social-proof { text-align: center; padding: 50px 0; background-color: #f4f7fa; }
         .social-proof h2 { color: #1a4d7d; margin-bottom: 30px; }
         .logo-grid { display: flex; justify-content: space-around; flex-wrap: wrap; }
         .logo-grid img { max-height: 50px; margin: 15px; opacity: 0.7; }
 
-        /* Services Section */
+        /* Services Section (Existing CSS) */
         .services { padding: 50px 0; text-align: center; }
         .services h2 { color: #1a4d7d; margin-bottom: 40px; }
         .service-card-grid { display: flex; justify-content: space-between; gap: 20px; text-align: left; }
         .card { flex: 1; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
         .card h3 { color: #ff9900; }
 
-        /* Footer */
+        /* NEW CONTACT FORM STYLES */
+        .contact-form-section {
+            padding: 60px 0;
+            background-color: #eaf1f8; /* Light blue background for visual separation */
+            text-align: center;
+        }
+        .contact-form-section h2 {
+            color: #1a4d7d;
+            margin-bottom: 10px;
+        }
+        .contact-form-section p {
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a4d7d;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important for padding/width calculation */
+            font-size: 1em;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .submit-button {
+            background-color: #1a4d7d; 
+            color: white; 
+            padding: 15px 30px; 
+            border: none;
+            border-radius: 5px; 
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #0e3052;
+        }
+        /* Footer (Existing CSS) */
         footer { background-color: #333; color: white; padding: 30px 0; text-align: center; font-size: 0.9em; }
         footer a { color: #ff9900; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
@@ -68,7 +126,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#case-studies">Case Studies</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#" class="cta-button">Contact Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li> 
                 </ul>
             </nav>
         </div>
@@ -77,50 +135,4 @@
     <section class="hero">
         <div class="container">
             <h1>We Turn Strategy into **Guaranteed** Results.</h1>
-            <p>Empowering ambitious leaders to achieve exponential growth through focused strategy and digital transformation.</p>
-            <a href="#contact" class="cta-button">Book Your Free Discovery Session</a>
-        </div>
-    </section>
-
-    <section class="social-proof">
-        <div class="container">
-            <h2>Trusted By Industry Leaders</h2>
-            <div class="logo-grid">
-                <img src="placeholder-logo-1.png" alt="Client Logo A" title="Global Tech Firm">
-                <img src="placeholder-logo-2.png" alt="Client Logo B" title="Fortune 500 Retail">
-                <img src="placeholder-logo-3.png" alt="Client Logo C" title="Leading Financial Institution">
-                <img src="placeholder-logo-4.png" alt="Client Logo D" title="Major Healthcare Provider">
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Core Consulting Expertise</h2>
-            <div class="service-card-grid">
-                <div class="card">
-                    <h3>📈 Growth Strategy</h3>
-                    <p>We analyze market dynamics to craft actionable, data-driven strategies that define your path to aggressive, sustainable revenue growth.</p>
-                </div>
-                <div class="card">
-                    <h3>💡 Digital Transformation</h3>
-                    <p>Modernize your operations and customer experience by integrating the latest technology without disrupting core business functions.</p>
-                </div>
-                <div class="card">
-                    <h3>⚙️ Operational Efficiency</h3>
-                    <p>Streamline your internal processes, reduce overhead, and increase team productivity by applying Lean and Agile methodologies.</p>
-                </div>
-            </div>
-            <a href="#" style="margin-top: 30px; display: inline-block;">View All Services &rarr;</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>Laurels Consulting &copy; 2025 | <a href="#">Privacy Policy</a> | <a href="#">Careers</a></p>
-            <p>Ready to elevate your business? <a href="#contact">Schedule a Consult Today.</a></p>
-        </div>
-    </footer>
-
-</body>
-</html>
+            <p>Empowering ambitious leaders to achieve exponential growth
