@@ -1,2 +1,2 @@
 # SampleWebApp
-# all the Unix main branch commit projects
+# commands of various platforms like docker kubernetes
