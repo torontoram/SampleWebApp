@@ -1,1 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurels Consulting - Your Partner in Growth</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import for Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for Stripe Elements */
+        .StripeElement {
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0; /* Tailwind border-gray-300 */
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Tailwind shadow-sm */
+            -webkit-transition: box-shadow 150ms ease;
+            transition: box-shadow 150ms ease;
+        }
+
+        .StripeElement--focus {
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5); /* Tailwind ring-indigo-500 with opacity */
+            border-color: #6366f1; /* Tailwind indigo-500 */
+        }
+
+        .StripeElement--invalid {
+            border-color: #ef4444; /* Tailwind red-500 */
+        }
+
+        .StripeElement--webkit-autofill {
+            background-color: #fefde5 !important;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl">
+        <div class="text-2xl font-bold text-indigo-700">
+            Laurels Consulting
+        </div>
+        <nav id="main-nav" class="hidden md:flex space-x-8">
+            <a href="#" class="text-indigo-700 font-bold transition duration-300 ease-in-out">Home</a>
+            <a href="#services" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 ease-in-out">Services</a>
+            <a href="#job-postings" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 ease-in-out">Job Postings</a>
+            <a href="#payments" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 ease-in-out">Payments</a>
+            <a href="#about" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 ease-in-out">About Us</a>
+            <a href="#contact" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300 ease-in-out">Contact</a>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        <!-- Mobile Navigation Overlay (initially hidden) -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-8 hidden">
+            <button id="close-mobile-menu" class="absolute top-4 right-6 text-gray-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#" class="text-indigo-700 font-bold text-2xl" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden')">Home</a>
+            <a href="#services" class="text-gray-600 hover:text-indigo-700 font-medium text-2xl" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden')">Services</a>
+            <a href="#job-postings" class="text-gray-600 hover:text-indigo-700 font-medium text-2xl" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden')">Job Postings</a>
+            <a href="#payments" class="text-gray-600 hover:text-indigo-700 font-medium text-2xl" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden')">Payments</a>
+            <a href="#about" class="text-gray-600 hover:text-indigo-700 font-medium text-2xl" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden')">About Us</a>
+            <a href="#contact" class="text-gray-600 hover:text-indigo-700 font-medium text-2xl" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden')">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20 px-6 md:px-12 rounded-xl m-4 md:m-8 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <!-- Placeholder for a subtle background pattern or image -->
+            <img src="https://placehold.co/1200x800/667eea/ffffff?text=Background+Pattern" alt="Abstract background pattern" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down">
+                Unlocking Your Business Potential with Innovative Consulting
+            </h1>
+            <p class="text-lg md:text-xl mb-10 opacity-90 animate-fade-in-up">
+                At Laurels Consulting, we transform challenges into opportunities, delivering tailored solutions that drive sustainable growth and success.
+            </p>
+            <a href="#contact" class="inline-block bg-white text-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105">
+                Get a Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-6 md:px-12 bg-white m-4 md:m-8 rounded-xl shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12">Our Core Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1l-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Strategic Planning</h3>
+                    <p class="text-gray-600 text-center">
+                        We help you define clear objectives and develop actionable strategies to achieve long-term success and market leadership.
+                    </p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 1.343-2 3-2zM12 14c-1.657 0-3 .895-3 2v1h6v-1c0-1.105-1.343-2-3-2zM12 3a2 2 0 00-2 2v.01A2 2 0 0012 7a2 2 0 002-2V5a2 2 0 00-2-2zm0 18a2 2 0 002-2v-.01A2 2 0 0012 17a2 2 0 00-2 2v.01a2 2 0 002 2zM3 12a2 2 0 002-2v.01A2 2 0 007 12a2 2 0 00-2 2V14a2 2 0 00-2-2zm18 0a2 2 0 00-2-2v.01A2 2 0 0017 12a2 2 0 002 2V14a2 2 0 002-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Operational Efficiency</h3>
+                    <p class="text-gray-600 text-center">
+                        Streamline your processes, reduce costs, and enhance productivity with our expert analysis and implementation plans.
+                    </p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Digital Transformation</h3>
+                    <p class="text-gray-600 text-center">
+                        Navigate the digital landscape with confidence. We guide your transition to cutting-edge technologies and digital solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Postings Section -->
+    <section id="job-postings" class="py-16 px-6 md:px-12 bg-white m-4 md:m-8 rounded-xl shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12">Current Job Openings</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Job Posting Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-2">Digital Transformation Consultant</h3>
+                    <p class="text-gray-600 mb-4">Help our clients navigate the digital landscape. Seeking a consultant with expertise in cloud solutions, AI, and process automation.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li>3+ years experience in digital consulting</li>
+                        <li>Proficiency in modern tech stacks</li>
+                        <li>Ability to lead workshops and client engagements</li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-indigo-600 text-white font-bold py-2 px-6 rounded-full hover:bg-indigo-700 transition duration-300 ease-in-out">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payments Section -->
+    <section id="payments" class="py-16 px-6 md:px-12 bg-gray-100 m-4 md:m-8 rounded-xl shadow-lg text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6">Make a Payment</h2>
+            <p class="text-gray-700 leading-relaxed mb-8">
+                Easily make payments for our services. Click the button below to proceed to our secure payment portal.
+            </p>
+            <button id="open-payment-modal" class="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-105">
+                Proceed to Payment
+            </button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 px-6 md:px-12 bg-gray-100 m-4 md:m-8 rounded-xl shadow-lg">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Our+Team" alt="Laurels Consulting Team" class="rounded-lg shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6">About Laurels Consulting</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Founded on the principle that business can be both productive and enjoyable, Laurels Consulting brings a fresh perspective to complex challenges. Our team of seasoned experts combines deep industry knowledge with creative problem-solving to deliver results that truly matter.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    We believe in building strong, collaborative relationships with our clients, ensuring that every solution is not only effective but also sustainable and aligned with your unique vision.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16 px-6 md:px-12 m-4 md:m-8 rounded-xl text-center shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                Let's discuss how our tailored consulting services can help you achieve your goals.
+            </p>
+            <a href="#contact" class="inline-block bg-white text-purple-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105">
+                Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 md:px-12 bg-white m-4 md:m-8 rounded-xl shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-700 mb-2">
+                        <strong class="font-medium">Email:</strong> spbluecorp@gmail.com
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <strong class="font-medium">Phone:</strong> +1 (647) 111 1111
+                    </p>
+                    <p class="text-gray-700 mb-2">
+                        <strong class="font-medium">Address:</strong> 99 Greenock ave, Suite 101, Toronto, ON M1G3A2
+                    </p>
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.423 2.357c0-1.034 1.053-1.66 1.932-.977l7.738 6.007c.879.683.879 1.832 0 2.515l-7.738 6.007c-.879.683-1.932.057-1.932-.977V12.5h-8.25a.75.75 0 01-.75-.75v-1.5c0-.414.336-.75.75-.75h8.25V2.357z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.007-.532A8.318 8.318 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.606.996 4.109 4.109 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.109 4.109 0 001.27 5.477A4.072 4.072 0 012 10.792v.058a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 text-sm font-medium mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 text-sm font-medium mb-1">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 text-center rounded-t-xl mt-4 md:mt-8">
+        <p>&copy; 2025 Laurels Consulting. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full mx-4 relative">
+            <button id="close-payment-modal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h2 class="text-2xl font-bold text-indigo-700 mb-6 text-center">Complete Your Payment</h2>
+            <form id="payment-form" class="space-y-4">
+                <div>
+                    <label for="amount" class="block text-gray-700 text-sm font-medium mb-1">Amount ($)</label>
+                    <input type="number" id="amount" name="amount" min="1" value="100" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <div>
+                    <label for="card-element" class="block text-gray-700 text-sm font-medium mb-1">Credit or Debit Card</label>
+                    <div id="card-element" class="StripeElement">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                    <!-- Used to display form errors. -->
+                    <div id="card-errors" role="alert" class="text-red-500 text-sm mt-2"></div>
+                </div>
+                <button type="submit" id="submit-button" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                    Pay Now
+                </button>
+                <div id="payment-message" class="mt-4 text-center text-sm"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Stripe.js v3 -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('hidden');
+            });
+
+            closeMobileMenu.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('hidden');
+            });
+
+            mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuOverlay.classList.add('hidden');
+                });
+            });
+
+            // --- Contact Form Logic ---
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    displayMessage('Please fill in all fields in the contact form.', 'error');
+                    return;
+                }
+
+                if (!/\S+@\S+\.\S+/.test(email)) {
+                    displayMessage('Please enter a valid email address in the contact form.', 'error');
+                    return;
+                }
+
+                // In a real scenario, you'd send this data to your backend
+                // For this demo, we'll just show a success message.
+                displayMessage('Thank you for your message! We will get back to you soon.', 'success');
+                contactForm.reset(); // Clear the form after "submission"
+            });
+
+            // --- Payment Modal Logic ---
+            const openPaymentModalBtn = document.getElementById('open-payment-modal');
+            const paymentModal = document.getElementById('payment-modal');
+            const closePaymentModalBtn = document.getElementById('close-payment-modal');
+
+            openPaymentModalBtn.addEventListener('click', () => {
+                paymentModal.classList.remove('hidden');
+            });
+
+            closePaymentModalBtn.addEventListener('click', () => {
+                paymentModal.classList.add('hidden');
+                // Clear any messages when closing the modal
+                document.getElementById('payment-message').textContent = '';
+                document.getElementById('card-errors').textContent = '';
+            });
+
+            // Close modal if clicked outside content
+            paymentModal.addEventListener('click', (e) => {
+                if (e.target === paymentModal) {
+                    paymentModal.classList.add('hidden');
+                    document.getElementById('payment-message').textContent = '';
+                    document.getElementById('card-errors').textContent = '';
+                }
+            });
+
+            // --- Stripe Integration ---
+            // Replace with your actual Stripe Publishable Key
+            // You can get this from your Stripe Dashboard: https://dashboard.stripe.com/test/apikeys
+            const stripe = Stripe('pk_test_TYooMQauvdEDq542VMJfvpgK'); // Example test key
+
+            const elements = stripe.elements();
+            const card = elements.create('card', {
+                style: {
+                    base: {
+                        iconColor: '#6366f1', /* Tailwind indigo-500 */
+                        color: '#374151', /* Tailwind gray-700 */
+                        fontWeight: '500',
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '16px',
+                        '::placeholder': {
+                            color: '#9ca3af', /* Tailwind gray-400 */
+                        },
+                    },
+                    invalid: {
+                        iconColor: '#ef4444', /* Tailwind red-500 */
+                        color: '#ef4444',
+                    },
+                },
+            });
+            card.mount('#card-element');
+
+            const form = document.getElementById('payment-form');
+            const paymentMessage = document.getElementById('payment-message');
+            const cardErrors = document.getElementById('card-errors');
+            const submitButton = document.getElementById('submit-button');
+
+            card.addEventListener('change', function(event) {
+                if (event.error) {
+                    cardErrors.textContent = event.error.message;
+                    cardErrors.classList.add('text-red-500');
+                } else {
+                    cardErrors.textContent = '';
+                    cardErrors.classList.remove('text-red-500');
+                }
+            });
+
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                submitButton.disabled = true;
+                paymentMessage.textContent = 'Processing your payment...';
+                paymentMessage.classList.remove('text-green-500', 'text-red-500');
+                paymentMessage.classList.add('text-gray-600');
+
+                const amount = document.getElementById('amount').value;
+                if (!amount || amount <= 0) {
+                    displayMessage('Please enter a valid amount.', 'error', paymentMessage);
+                    submitButton.disabled = false;
+                    return;
+                }
+
+                // In a real application, you would make a fetch call to your backend
+                // to create a PaymentIntent and get its client_secret.
+                // For this demo, we'll simulate it with a dummy client_secret.
+                // DO NOT USE A HARDCODED CLIENT SECRET IN PRODUCTION.
+                const dummyClientSecret = 'pi_3PZqE4B2d1zJjLp405G7X8Y9_secret_YOUR_CLIENT_SECRET_FROM_BACKEND'; // Replace with a real client secret from your backend
+
+                try {
+                    const { paymentMethod, error: createPaymentMethodError } = await stripe.createPaymentMethod({
+                        type: 'card',
+                        card: card,
+                        billing_details: {
+                            // Collect billing details if needed
+                            // name: 'Customer Name',
+                            // email: 'customer@example.com',
+                        },
+                    });
+
+                    if (createPaymentMethodError) {
+                        displayMessage(createPaymentMethodError.message, 'error', paymentMessage);
+                        submitButton.disabled = false;
+                        return;
+                    }
+
+                    // Simulate confirming the payment intent on the client side.
+                    // In a real app, this `confirmCardPayment` call would be made with a `client_secret`
+                    // obtained from your server after it creates a `PaymentIntent`.
+                    const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(dummyClientSecret, {
+                        payment_method: paymentMethod.id,
+                    });
+
+                    if (confirmError) {
+                        displayMessage(confirmError.message, 'error', paymentMessage);
+                    } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+                        displayMessage('Payment successful! Thank you for your purchase.', 'success', paymentMessage);
+                        form.reset(); // Clear the form
+                        card.clear(); // Clear the card element
+                    } else {
+                        displayMessage('Payment failed or was cancelled. Please try again.', 'error', paymentMessage);
+                    }
+                } catch (error) {
+                    console.error('Stripe error:', error);
+                    displayMessage('An unexpected error occurred during payment. Please try again.', 'error', paymentMessage);
+                } finally {
+                    submitButton.disabled = false;
+                }
+            });
+
+            // Helper function to display messages
+            function displayMessage(message, type, element = paymentMessage) {
+                element.textContent = message;
+                element.classList.remove('text-green-500', 'text-red-500', 'text-gray-600');
+                if (type === 'success') {
+                    element.classList.add('text-green-500');
+                } else if (type === 'error') {
+                    element.classList.add('text-red-500');
+                } else {
+                    element.classList.add('text-gray-600');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 
