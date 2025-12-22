@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurels Consulting | Strategy & Digital Transformation</title>
+    <style>
+        /* General Styles */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333; }
+        .container { width: 80%; max-width: 1200px; margin: auto; padding: 20px 0; }
+
+        /* Header & Navigation (Existing CSS) */
+        header { background-color: #1a4d7d; color: white; padding: 10px 0; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5em; font-weight: bold; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        nav ul li a { color: white; text-decoration: none; padding: 10px 15px; display: block; transition: background-color 0.3s; }
+        nav ul li a:hover { background-color: #0e3052; }
+
+        /* Hero Section (Existing CSS) */
+        .hero { 
+            background: url('placeholder-office-bg.jpg') no-repeat center center/cover;
+            background-color: #1a4d7d; 
+            color: white; 
+            padding: 100px 0; 
+            text-align: center;
+        }
+        .hero h1 { font-size: 3em; margin-bottom: 10px; }
+        .hero p { font-size: 1.5em; margin-bottom: 30px; }
+        .cta-button { 
+            background-color: #ff9900; 
+            color: white; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover { background-color: #e68a00; }
+
+        /* Social Proof Section (Existing CSS) */
+        .social-proof { text-align: center; padding: 50px 0; background-color: #f4f7fa; }
+        .social-proof h2 { color: #1a4d7d; margin-bottom: 30px; }
+        .logo-grid { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .logo-grid img { max-height: 50px; margin: 15px; opacity: 0.7; }
+
+        /* Services Section (Existing CSS) */
+        .services { padding: 50px 0; text-align: center; }
+        .services h2 { color: #1a4d7d; margin-bottom: 40px; }
+        .service-card-grid { display: flex; justify-content: space-between; gap: 20px; text-align: left; }
+        .card { flex: 1; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .card h3 { color: #ff9900; }
+
+        /* NEW CONTACT FORM STYLES */
+        .contact-form-section {
+            padding: 60px 0;
+            background-color: #eaf1f8; /* Light blue background for visual separation */
+            text-align: center;
+        }
+        .contact-form-section h2 {
+            color: #1a4d7d;
+            margin-bottom: 10px;
+        }
+        .contact-form-section p {
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1a4d7d;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important for padding/width calculation */
+            font-size: 1em;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .submit-button {
+            background-color: #1a4d7d; 
+            color: white; 
+            padding: 15px 30px; 
+            border: none;
+            border-radius: 5px; 
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #0e3052;
+        }
+        /* Footer (Existing CSS) */
+        footer { background-color: #333; color: white; padding: 30px 0; text-align: center; font-size: 0.9em; }
+        footer a { color: #ff9900; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Laurels CONSULTING</div>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li> 
+                    <li><a href="#coming soon">Coming soon</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>We Turn Strategy into  Results.</h1>
+            <p>Empowering ambitious leaders to achieve exponential growth
