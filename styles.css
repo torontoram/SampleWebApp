@@ -1,0 +1,99 @@
+/* Shared site styles for Laurels Consulting */
+/* Layout */
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333; }
+.container { width: 80%; max-width: 1200px; margin: auto; padding: 20px 0; }
+
+/* Header & Navigation */
+header { background-color: #1a4d7d; color: white; padding: 10px 0; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5em; font-weight: bold; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; }
+nav ul li { display: inline-block; }
+nav ul li a { color: white; text-decoration: none; padding: 10px 15px; display: block; transition: background-color 0.3s; }
+nav ul li a:hover { background-color: #0e3052; }
+
+/* Hero */
+.hero { 
+    background: url('placeholder-office-bg.jpg') no-repeat center center/cover;
+    background-color: #1a4d7d; 
+    color: white; 
+    padding: 100px 0; 
+    text-align: center;
+}
+.hero h1 { font-size: 3em; margin-bottom: 10px; }
+.hero p { font-size: 1.5em; margin-bottom: 30px; }
+
+/* Buttons */
+.cta-button, .cta { 
+    background-color: #ff9900; 
+    color: white; 
+    padding: 12px 24px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+.cta-button:hover, .cta:hover { background-color: #e68a00; }
+
+/* Social Proof */
+.social-proof { text-align: center; padding: 50px 0; background-color: #f4f7fa; }
+.social-proof h2 { color: #1a4d7d; margin-bottom: 30px; }
+.logo-grid { display: flex; justify-content: space-around; flex-wrap: wrap; }
+.logo-grid img { max-height: 50px; margin: 15px; opacity: 0.7; }
+
+/* Services */
+.services { padding: 50px 0; text-align: center; }
+.services h2 { color: #1a4d7d; margin-bottom: 40px; }
+.service-card-grid { display: flex; justify-content: space-between; gap: 20px; text-align: left; }
+.card { flex: 1; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); background: #fff }
+.card h3 { color: #ff9900; }
+
+/* Contact form */
+.contact-form-section { padding: 60px 0; background-color: #eaf1f8; text-align: center; }
+.contact-form-section h2 { color: #1a4d7d; margin-bottom: 10px; }
+.contact-form-section p { margin-bottom: 40px; font-size: 1.1em; color: #555; }
+.contact-form { max-width: 600px; margin: auto; text-align: left; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #1a4d7d; }
+.form-group input[type="text"], .form-group input[type="email"], .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1em; }
+.form-group textarea { resize: vertical; height: 150px; }
+.submit-button { background-color: #1a4d7d; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1.1em; transition: background-color 0.3s; }
+.submit-button:hover { background-color: #0e3052; }
+
+/* Services page specific layout */
+.cards { display:flex; gap:20px; flex-wrap:wrap; margin-top:30px }
+.card h3 { color:#1a4d7d; margin-top:0 }
+
+/* Footer */
+footer { background-color: #333; color: white; padding: 30px 0; text-align: center; font-size: 0.9em; }
+footer a { color: #ff9900; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Small screens */
+@media (max-width: 800px) {
+    .container { width: 94%; }
+    nav { flex-direction: column; gap: 8px; }
+    .hero { padding: 60px 0; }
+    .service-card-grid { flex-direction: column; }
+}
+
+/* Custom form and thank-you styling */
+.contact-form { background: #fff; padding: 22px; border-radius: 10px; box-shadow: 0 8px 24px rgba(26,77,125,0.06); }
+.form-group input, .form-group textarea { border: 1px solid #d1dbe6; padding: 12px 14px; border-radius: 8px; transition: box-shadow .15s ease, border-color .15s ease; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: #1a4d7d; box-shadow: 0 4px 18px rgba(26,77,125,0.08); }
+.submit-button { background: linear-gradient(180deg,#1a4d7d 0%, #153d62 100%); border: none; padding: 12px 20px; border-radius: 8px; box-shadow: 0 8px 18px rgba(25,56,90,0.12); }
+.submit-button:hover { transform: translateY(-2px); box-shadow: 0 12px 22px rgba(25,56,90,0.16); }
+
+.thank-you { text-align:center; padding:80px 20px; background: linear-gradient(180deg,#f7fbff 0%, #ffffff 100%); border-radius: 12px; box-shadow: 0 10px 30px rgba(25,56,90,0.06); }
+.thank-you h1 { color:#123a5a; font-size:2rem; margin-bottom:8px; }
+.thank-you p { color:#334155; font-size:1.05rem; max-width:760px; margin: 0 auto 18px; }
+.home-link { display:inline-block; margin-top:20px; background:#ff8a00; color:white; padding:12px 20px; border-radius:10px; text-decoration:none; box-shadow: 0 8px 18px rgba(255,138,0,0.12); }
+.home-link:hover { transform: translateY(-3px); }
+
+/* Small tweaks for accessibility and readability */
+label { font-weight:600; color:#163a57; }
+@media (max-width:600px) {
+    .cards { flex-direction:column; }
+    .thank-you { padding:48px 16px; }
+}

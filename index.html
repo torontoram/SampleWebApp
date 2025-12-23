@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laurels Consulting | Strategy & Digital Transformation</title>
+<<<<<<< HEAD
     <style>
         /* General Styles */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333; }
@@ -115,6 +116,9 @@
         footer a { color: #ff9900; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
     </style>
+=======
+    <link rel="stylesheet" href="styles.css">
+>>>>>>> origin/master
 </head>
 <body>
 
@@ -123,7 +127,11 @@
             <nav>
                 <div class="logo">Laurels CONSULTING</div>
                 <ul>
+<<<<<<< HEAD
                     <li><a href="#services">Services</a></li>
+=======
+                    <li><a href="services.html">Services</a></li>
+>>>>>>> origin/master
                     <li><a href="#case-studies">Case Studies</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact Us</a></li> 
@@ -135,5 +143,95 @@
 
     <section class="hero">
         <div class="container">
+<<<<<<< HEAD
             <h1>We Turn Strategy into  Results.</h1>
             <p>Empowering ambitious leaders to achieve exponential growth
+=======
+            <h1>We Turn Strategy into Results.</h1>
+            <p>Empowering ambitious leaders to achieve exponential growth.</p>
+            <a class="cta-button" href="services.html">Explore Services</a>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+            <h2>Trusted by leaders</h2>
+            <div class="logo-grid">
+                <img src="images/olg-logo.svg" alt="OLG logo">
+                <img src="images/tdbank-logo.svg" alt="TD Bank logo">
+                <img src="images/tangerine-logo.svg" alt="Tangerine Bank logo">
+                <img src="images/bell-logo.svg" alt="Bell logo">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-form-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Tell us about your project or training needs — we'll respond within 2 business days.</p>
+
+            <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+
+            <div id="contactSuccess" style="display:none;margin-top:18px;color:#1a4d7d;font-weight:bold;">Thanks — we'll be in touch soon.</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">© Laurels Consulting — All rights reserved</div>
+    </footer>
+
+    <script>
+        (function(){
+            var form = document.getElementById('contactForm');
+            var success = document.getElementById('contactSuccess');
+            function validEmail(email){ return /^\S+@\S+\.\S+$/.test(email); }
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                var name = document.getElementById('name').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var subject = document.getElementById('subject').value.trim() || 'Website inquiry';
+                var message = document.getElementById('message').value.trim();
+                if(!name || !email || !message){
+                    alert('Please complete Name, Email and Message.');
+                    return;
+                }
+                if(!validEmail(email)){
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+                }).then(function(res){
+                    if(!res.ok) throw new Error('Network response was not ok');
+                    // Redirect to thank you page on success
+                    window.location.href = 'thank-you.html';
+                }).catch(function(err){
+                    console.error(err);
+                    alert('Sorry, we could not send your message right now. Please try again later.');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
+>>>>>>> origin/master
