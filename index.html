@@ -27,8 +27,7 @@
         <div class="container">
             <h1>We Turn Strategy into Results.</h1>
             <p>Empowering ambitious leaders to achieve exponential growth.</p>
-            <a class="cta-button" href="services.html">Explore Services</a>
-        </div>
+            </div>
     </section>
 
     <section class="social-proof">
@@ -75,12 +74,11 @@
                     <textarea id="message" name="message" required></textarea>
                 </div>
                 <button type="submit" class="submit-button">Send Message</button>
-            </body>
-            </html>
+            </form> </div>
+    </section>
 
     <script>
         (function(){
-            // Contact form submission
             var form = document.getElementById('contactForm');
             if (form) {
                 function validEmail(email){ return /^\S+@\S+\.\S+$/.test(email); }
@@ -104,7 +102,6 @@
                         body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
                     }).then(function(res){
                         if(!res.ok) throw new Error('Network response was not ok');
-                        // Redirect to thank you page on success
                         window.location.href = 'thank-you.html';
                     }).catch(function(err){
                         console.error(err);
@@ -112,27 +109,7 @@
                     });
                 });
             }
-
-            // Shrink hero when Services nav item is clicked (if on same page)
-            var servicesLink = document.querySelector('nav a[href="#services"], nav a[href="services.html"]');
-            var hero = document.querySelector('.hero');
-            if (servicesLink && hero) {
-                servicesLink.addEventListener('click', function(e){
-                    hero.classList.add('hero--compact');
-                    var target = document.querySelector('#services');
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            }
         })();
     </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laurels Consulting | Strategy & Digital Transformation</title>
